@@ -58,7 +58,8 @@ document.querySelector(".js-product-grid").innerHTML = productsHTML;
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
-        const productId = button.dataset.productId;
+        //Desconstructing Shortcut
+        const { productId } = button.dataset;
 
         let quantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
         let quantitySelector = Number(quantity);
