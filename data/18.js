@@ -1,0 +1,37 @@
+// const xhr = new XMLHttpRequest();
+
+// xhr.addEventListener('load', () => {
+//     console.log(xhr.response);
+// })
+
+// xhr.open('GET', 'https://supersimplebackend.dev/greeting');
+// xhr.send();
+
+// fetch('https://supersimplebackend.dev/greeting')
+//     .then((response) => {
+//         return response.text();
+//     })
+//     .then((data) => {
+//         console.log(data);
+//     })
+
+async function greeting() {
+    try {
+        const response = await fetch('https://supersimplebackend.dev/greeting', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: 'Adarsh Ranjan'
+            })
+        });
+        const data = await response.text();
+
+        console.log(data);
+    } catch (error) {
+        console.log(Error);
+    }
+}
+
+greeting();
